@@ -60,7 +60,49 @@ namespace Reimplement_CGS
             return value;
         }
 
-        static void Main(string[] args)
+
+        public static void listCurators()
+        {
+            Console.WriteLine("List of curators");
+            foreach (Curator cur in myCurators)
+            {
+                Console.WriteLine(cur.CuratorID + " " + cur.getFirst() + " " + cur.getLast());
+            }
+        }
+
+
+        public static void listArtists()
+        {
+            Console.WriteLine("List of Artists");
+            foreach (Artist art in myArtists)
+            {
+                Console.WriteLine(art.getId() + " " + art.getFirst() + " " + art.getLast());
+            }
+        }
+
+        public static void listOfArt()
+        {
+            Console.WriteLine("List of artpieces");
+            foreach (Artpiece piece in myArtpieces)
+            {
+                Console.WriteLine(piece.getID() + " " + piece.ToString());
+            }
+        }
+
+        public static void displayMenu()
+        {
+            Console.WriteLine("Choose from one of the following options");
+            Console.WriteLine("Option 1: Add Curator");
+            Console.WriteLine("Option 2: Add Artist");
+            Console.WriteLine("Option 3: Add Artpiece");
+            Console.WriteLine("Option 4: Sell Artpiece");
+            Console.WriteLine("Option 5: List of Artists");
+            Console.WriteLine("Option 6: List of Artpieces");
+            Console.WriteLine("Option 7: List of Curators");
+        }
+
+
+        public static void Main(string[] args)
         {
 
             bool menu = true;
@@ -70,16 +112,6 @@ namespace Reimplement_CGS
             string artTitle = "";
             double value = 0.0;
 
-
-            static void Main(string[] args)
-            {
-
-                bool menu = true;
-                string id;
-                string curId;
-                string artId;
-                string artTitle = "";
-                double value = 0.0;
 
 
                 while (menu)
@@ -245,7 +277,8 @@ namespace Reimplement_CGS
 
 
                         case 5:
-                            listArtists();
+                        
+                        listArtists();
                             break;
                         case 6:
                             listOfArt();
@@ -255,43 +288,7 @@ namespace Reimplement_CGS
                             break;
                     }
                 }
-            }
-
-            public static void listCurators()
-            {
-                Console.WriteLine("List of curators");
-                foreach (Curator cur in myCurators)
-                {
-                    Console.WriteLine(cur.CuratorID + " " + cur.getFirst() + " " + cur.getLast());
-                }
-            }
-
-            public static void listArtists() {
-                Console.WriteLine("List of Artists");
-                foreach (Artist art in myArtists) {
-                    Console.WriteLine(art.getId() + " " + art.getFirst() + " " + art.getLast());
-                }
-            }
-
-            public static void listOfArt() {
-                Console.WriteLine("List of artpieces");
-                foreach (Artpiece piece in myArtpieces)
-                {
-                    Console.WriteLine(piece.getID() + " " + piece.ToString());
-                }
-            }
-
-            public static void displayMenu()
-            {
-                Console.WriteLine("Choose from one of the following options");
-                Console.WriteLine("Option 1: Add Curator");
-                Console.WriteLine("Option 2: Add Artist");
-                Console.WriteLine("Option 3: Add Artpiece");
-                Console.WriteLine("Option 4: Sell Artpiece");
-                Console.WriteLine("Option 5: List of Artists");
-                Console.WriteLine("Option 6: List of Artpieces");
-                Console.WriteLine("Option 7: List of Curators");
-            }
         }
     }
 }
+
